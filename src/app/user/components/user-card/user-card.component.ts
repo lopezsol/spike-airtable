@@ -12,5 +12,12 @@ import type { User } from '../../interfaces/user.interface';
 })
 export class UserCardComponent {
   user = input.required<User>();
-  isReferent = computed(() => this.user().fields['Personas a cargo']);
+  isReferent = computed(() =>
+    this.user().fields['Personas a cargo'] ? true : false
+  );
+  activeProject = computed(() =>
+    this.user().fields['Nombre - Proyecto Activo']
+      ? this.user().fields['Nombre - Proyecto Activo'][0]
+      : undefined
+  );
 }

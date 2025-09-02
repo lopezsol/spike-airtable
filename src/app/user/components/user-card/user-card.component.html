@@ -3,14 +3,22 @@
     <div class="flex items-center gap-2 px-5 pt-5">
       <i class="pi pi-user"></i>
       <span class="p-card-title">{{ user().fields["Nombre completo"] }}</span>
-      <referent-tag></referent-tag>
+      @if (isReferent()) {
+        <referent-tag></referent-tag>
+      }
+
     </div>
   </ng-template>
-  <div class="flex flex-col gap-3">
+  <div class="flex flex-col gap-5">
     <div class="flex items-center gap-2">
       <i class="pi pi-briefcase"></i>
       <span class="text-sm font-medium"> Proyecto: </span>
-      <p-tag [value]="user().fields['Nombre - Proyecto Activo'][0]" />
+      @if (activeProject()) {
+      <p-tag [value]="activeProject()" />
+
+      } @else {
+      <span class="text-sm ">Sin proyecto activo</span>
+      }
     </div>
 
     @if (isReferent()) {
@@ -23,6 +31,9 @@
       <div class="flex flex-row gap-2">
         @for (subordinate of user().fields['Nombre completo - Personas a cargo']; track $index) {
         <p-tag [value]="subordinate" class="subordinate" />
+        } @empty {
+        <span class="text-sm ">Sin personas a cargo </span>
+
         }
       </div>
     </div>
@@ -31,7 +42,7 @@
     <div class="flex items-center gap-2">
       <i class="pi pi-users"></i>
       <span class="text-sm font-medium">Referente:</span>
-      <span class="text-sm text-muted-color">
+      <span class="text-sm ">
         {{ user().fields["Nombre completo - Referente Activo"] }}
       </span>
     </div>
@@ -54,7 +65,7 @@
       <div class="flex flex-row gap-2 items-center">
         <i class="pi pi-calendar-minus"></i>
         <div class="flex flex-col">
-          <span class="text-xs text-muted-color">Fecha de alta</span>
+          <span class="text-xs text-muted-color-emphasis">Fecha de alta</span>
           <span class="text-sm">{{ user().fields["Fecha de alta"] }}</span>
         </div>
       </div>
@@ -62,7 +73,7 @@
       <div class="flex flex-row gap-2 items-center">
         <i class="pi pi-calendar-minus"></i>
         <div class="flex flex-col">
-          <span class="text-xs text-muted-color">Fecha de nacimiento</span>
+          <span class="text-xs text-muted-color-emphasis">Fecha de nacimiento</span>
           <span class="text-sm">{{
             user().fields["Fecha de nacimiento"]
           }}</span>
