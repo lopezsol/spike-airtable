@@ -3,6 +3,60 @@
 @plugin "tailwindcss-primeui";
 @import "primeicons/primeicons.css";
 
-@theme{
-    
+@theme {
 }
+
+body {
+  background-color: var(--body-bg);
+  color: var(--body-text-color);
+}
+
+:root {
+  /* Modo claro (por defecto) */
+  --primary-color: #007b87;
+  --primary-text: #ffffff;
+  
+  /* Backgrounds */
+  --body-bg: #ffffff;
+  --card-bg: rgb(247, 251, 251);
+  --tag-bg: oklch(0.97 0.02 200);
+  
+  /* Borders */
+  --card-border: oklch(0.85 0.08 200);
+  --tag-border: oklch(0.85 0.08 200);
+  
+  /* Text colors */
+  --card-title-color: #000000;
+  --tag-text-color: oklch(0.35 0.18 200);
+  --email-color: oklch(0.5 0.16 200);
+  --icon-color: oklch(0.5 0.16 200);
+  --body-text-color: #333333;
+  --secondary-text-color: #666666;
+}
+
+/* Variables para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Mantener colores primarios pero ajustar contraste */
+    --primary-color: #00a1b0;
+    --primary-text: #ffffff;
+    
+    /* Backgrounds oscuros */
+    --body-bg: #1a1a1a;
+    --card-bg: #2d2d2d;
+    --tag-bg: #3a3a3a;
+    
+    /* Borders más suaves para modo oscuro */
+    --card-border: #404040;
+    --tag-border: #505050;
+    
+    /* Text colors adaptados para modo oscuro */
+    --card-title-color: #ffffff;
+    --tag-text-color: #c0c0c0;
+    --email-color: #4db6ff;
+    --icon-color: #4db6ff;
+    --body-text-color: #e0e0e0;
+    --secondary-text-color: #b0b0b0;
+  }
+}
+
