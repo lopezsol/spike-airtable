@@ -1,0 +1,9 @@
+p-tag {
+  background-color: #007b87;
+  color: #fff;
+  border: 1px solid transparent;
+  font-size: 0.75rem;
+  padding: 1px 8px;
+  font-weight: 500;
+  gap: 8px
+}

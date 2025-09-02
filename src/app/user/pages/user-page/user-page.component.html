@@ -1,0 +1,14 @@
+<div class="container mx-auto py-10">
+  <h1 class="text-3xl font-bold mb-2 text-center">
+    Directorio de <span>Personas</span>
+  </h1>
+  <p class="text-muted-color-emphasis text-center">
+    Información del equipo conectada desde Airtable
+  </p>
+  <user-list [users]="users()" class="mt-10" />
+ @if (isLoading()) {
+  <div class="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
+    <p-progress-spinner ariaLabel="loading" />
+  </div>
+}
+</div>

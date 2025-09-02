@@ -1,0 +1,73 @@
+<p-card>
+  <ng-template pTemplate="header">
+    <div class="flex items-center gap-2 px-5 pt-5">
+      <i class="pi pi-user"></i>
+      <span class="p-card-title">{{ user().fields["Nombre completo"] }}</span>
+      <referent-tag></referent-tag>
+    </div>
+  </ng-template>
+  <div class="flex flex-col gap-3">
+    <div class="flex items-center gap-2">
+      <i class="pi pi-briefcase"></i>
+      <span class="text-sm font-medium"> Proyecto: </span>
+      <p-tag [value]="user().fields['Nombre - Proyecto Activo'][0]" />
+    </div>
+
+    @if (isReferent()) {
+    <div class="flex flex-col">
+      <div class="flex text-sm items-center gap-2">
+        <i class="pi pi-users"></i>
+        <span class="font-medium">Equipo a cargo:</span>
+      </div>
+
+      <div class="flex flex-row gap-2">
+        @for (subordinate of user().fields['Nombre completo - Personas a cargo']; track $index) {
+        <p-tag [value]="subordinate" class="subordinate" />
+        }
+      </div>
+    </div>
+
+    } @else {
+    <div class="flex items-center gap-2">
+      <i class="pi pi-users"></i>
+      <span class="text-sm font-medium">Referente:</span>
+      <span class="text-sm text-muted-color">
+        {{ user().fields["Nombre completo - Referente Activo"] }}
+      </span>
+    </div>
+    }
+
+    <div class="flex items-center gap-2">
+      <i class="pi pi-envelope"></i>
+      <p class="text-sm">
+        <span class="font-medium">Email: </span>
+        <a
+          [href]='`mailto:${user().fields["Correo Moby"]}`'
+          class="hover:underline email"
+        >
+          {{ user().fields["Correo Moby"] }}
+        </a>
+      </p>
+    </div>
+
+    <div class="flex flex-row justify-between">
+      <div class="flex flex-row gap-2 items-center">
+        <i class="pi pi-calendar-minus"></i>
+        <div class="flex flex-col">
+          <span class="text-xs text-muted-color">Fecha de alta</span>
+          <span class="text-sm">{{ user().fields["Fecha de alta"] }}</span>
+        </div>
+      </div>
+
+      <div class="flex flex-row gap-2 items-center">
+        <i class="pi pi-calendar-minus"></i>
+        <div class="flex flex-col">
+          <span class="text-xs text-muted-color">Fecha de nacimiento</span>
+          <span class="text-sm">{{
+            user().fields["Fecha de nacimiento"]
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</p-card>

@@ -1,0 +1,10 @@
+div.container {
+  background-color: oklch(1 0 0);
+  min-height: 100dvh;
+
+}
+
+span {
+  color: #007b87;
+}
+

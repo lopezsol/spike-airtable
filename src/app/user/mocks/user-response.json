@@ -1,0 +1,72 @@
+{
+    "records": [
+        {
+            "id": "recYiEKNif4iHRSd3",
+            "createdTime": "2025-09-01T16:21:04.000Z",
+            "fields": {
+                "Nombre completo": "Pedro Perez",
+                "Proyecto Activo": [
+                    "recPtunwK2QmDPtIT"
+                ],
+                "Fecha de alta": "2025-08-04",
+                "Fecha de nacimiento": "2025-09-10",
+                "Correo Moby": "pperez@gmail.com",
+                "Nombre - Proyecto Activo": [
+                    "MobyApp"
+                ],
+                "Referente Activo": [
+                    "recskAwQMoxOYxPbw"
+                ],
+                "Nombre completo - Referente Activo": [
+                    "Natalia Gómez"
+                ]
+            }
+        },
+        {
+            "id": "recskAwQMoxOYxPbw",
+            "createdTime": "2025-09-01T16:05:57.000Z",
+            "fields": {
+                "Nombre completo": "Natalia Gómez",
+                "Proyecto Activo": [
+                    "rec0fZqYI6kKP2R7O"
+                ],
+                "Fecha de alta": "2021-01-01",
+                "Fecha de nacimiento": "1991-01-01",
+                "Correo Moby": "ngomez@gmail.com",
+                "Nombre - Proyecto Activo": [
+                    "Trenes"
+                ],
+                "Personas a cargo": [
+                    "recuK6mPGYngS7Yr3",
+                    "recYiEKNif4iHRSd3"
+                ],
+                "Nombre completo - Personas a cargo": [
+                    "Juan Pérez",
+                    "Pedro Perez"
+                ]
+            }
+        },
+        {
+            "id": "recuK6mPGYngS7Yr3",
+            "createdTime": "2025-09-01T16:04:46.000Z",
+            "fields": {
+                "Nombre completo": "Juan Pérez",
+                "Proyecto Activo": [
+                    "recj2dSLLrVEHKO6l"
+                ],
+                "Fecha de alta": "2025-06-10",
+                "Fecha de nacimiento": "2005-06-10",
+                "Correo Moby": "jperez@gmail.com",
+                "Nombre - Proyecto Activo": [
+                    "Banco ICBC"
+                ],
+                "Referente Activo": [
+                    "recskAwQMoxOYxPbw"
+                ],
+                "Nombre completo - Referente Activo": [
+                    "Natalia Gómez"
+                ]
+            }
+        }
+    ]
+}
