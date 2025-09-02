@@ -1,12 +1,10 @@
 import { inject, Injectable } from '@angular/core';
-import users from '../mocks/user-response.json';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable, of } from 'rxjs';
-import { UserResponse } from '../interfaces/user-response.interface';
-import { User } from '../interfaces/user.interface';
+import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import type { User } from '../interfaces/user.interface';
 
-const baseUrl = environment.baseUrl
+const baseUrl = environment.baseUrl;
 @Injectable({
   providedIn: 'root',
 })
@@ -14,7 +12,6 @@ export class UserService {
   http = inject(HttpClient);
 
   getAllUsers(): Observable<User[]> {
-
     return this.http.get<User[]>(`${baseUrl}/airtable/employees`);
   }
 }

@@ -1,8 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
-import { User } from '../../interfaces/user.interface';
 import { UserService } from '../../services/user.service';
 import { UserListComponent } from '../../components/user-list/user-list.component';
 import { ProgressSpinner } from 'primeng/progressspinner';
+import type { User } from '../../interfaces/user.interface';
 
 @Component({
   selector: 'user-page',

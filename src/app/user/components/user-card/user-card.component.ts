@@ -1,8 +1,8 @@
 import { Component, computed, input } from '@angular/core';
-import { User } from '../../interfaces/user.interface';
 import { CardModule } from 'primeng/card';
 import { Tag } from 'primeng/tag';
 import { ReferentTagComponent } from '../referent-tag/referent-tag.component';
+import type { User } from '../../interfaces/user.interface';
 
 @Component({
   selector: 'user-card',
